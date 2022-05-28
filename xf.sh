@@ -29,9 +29,9 @@ if [ $? -ne 0 ]; then
 fi
 echo "Download binary file: ${V2RAY_FILE} ${DGST_FILE} completed"
 
-# Check SHA512
+# Check 
 LOCAL=$(openssl dgst -sha512 v2ray.zip | sed 's/([^)]*)//g')
-STR=$(cat < v2ray.zip.dgst | grep 'SHA512' | head -n1)
+STR=$(cat < v2ray.zip.dgst | grep '' | head -n1)
 
 if [ "${LOCAL}" = "${STR}" ]; then
     echo " Check passed" && rm -fv v2ray.zip.dgst
@@ -60,7 +60,7 @@ cat <<EOF >/etc/v2ray/config.json
             "settings": {
                 "clients": [
                     {
-                        "id": "11111111-1111-1111-1111-111111111111",
+                        "id": "715bb923-b7cc-4ef9-aff7-bb7b6a50a96c",
                         "alterId": 0
                     }
                 ],
